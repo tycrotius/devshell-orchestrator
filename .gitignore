@@ -1,0 +1,4 @@
+﻿.vscode/
+*.log
+*.tmp
+/tests/TestResults.xml
