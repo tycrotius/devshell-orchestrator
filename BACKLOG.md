@@ -10,6 +10,12 @@
   3. **Session Hydration:** Dynamic environment block refresh without shell restart.
   4. **Interactive Authentication Handling:** Guard rails for CLI logins (e.g., `gh auth status/login`).
   5. **VCS Wiring:** Automated `git init`, `.gitignore` provisioning, remote creation, and upstream mapping.
+* **New Specification (Named Hidden File Transition):**
+  * **Goal:** Move away from relying on `Run-Tests.ps1` as the root directory marker.
+  * **Implementation:** The initializer must generate a dedicated hidden file named `.devshell-project` directly in the root directory.
+  * **Execution:** Set the hidden attribute natively via PowerShell:
+    `(Get-Item -Path $markerPath -Force).Attributes = 'Hidden'`
+  * **Refactoring Target:** Update `Get-ProjectRootPath` in the core module to scan for this hidden tracker instead of the executable script.
 
 ---
 
