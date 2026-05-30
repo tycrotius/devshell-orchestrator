@@ -21,6 +21,10 @@
 
 ## 📋 Future Pipeline / Ideas
 
+### [TECH DEBT] Platform & Test-Infrastructure Upgrade (PS 7.x & Pester 7.x)
+* **Description:** Migrate the runtime from Windows PowerShell 5.1 to PowerShell 7.x (Core) and upgrade Pester from 5.1 to the latest 7.x generation.
+* **Impact:** Eliminates old engine syntax limits (enables the Null-Coalescing operator `??`), prevents `[PesterConfiguration]` TypeNotFound errors in fresh console sessions, and removes backward-compatibility array hacks from the production code.
+
 ### [ENHANCEMENT] Auto-Update Mechanism for Modules
 * Check if a newer version of a module or tool is available on GitHub/Chocolatey during the first shell initialization of the day, running silently in the background to prevent startup lag.
 
@@ -30,4 +34,6 @@
 ---
 
 ## 🏁 Completed Milestones
+* **[2026-05-30] Dynamic Project-Root Configuration (Sprint 1):** Broke the hardcoded dependency on `Run-Tests.ps1`. Implemented a robust configuration checker in the module loader (`orchestrator.conf.json`) and dynamically wired `Get-ProjectRootPath` using a PS 5.1-safe evaluation array fallback. Covered by test cases `[05]` and `[06]`.
 * **[2026-05-30] Pester Interception & Data-Streaming:** Fixed the console interception barrier by switching Pester to object-driven configuration. Captured `$result` data cleanly into the Windows clipboard pipeline while preserving the absolute silent "Lean Mode" design.
+
