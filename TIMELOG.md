@@ -11,6 +11,8 @@
 | 2026-05-30 | 0.75 h   | Dynamic Marker   | Test [06] (Marker-Dynamisierung) & TDD RED phase. |
 | 2026-05-30 | 0.75 h   | PS 5.1 Compat    | Refactoring for PS 5.1 compatibility (Parser Fixes & Loop Guard). |
 | 2026-05-30 | 0.5 h    | Post-Sprint-1    | Backlog refinement, ASCII/Emoji issue tracking & CleanUp. |
+| 2026-05-30 | 0.42 h   | Pester-Lib Fix   | Session-Injektion nach System-Reboot unter Windows PowerShell 5.1 gelöst (25m). |
+| 2026-05-30 | 0.5 h    | KDP-Cleaning     | KDP-Protokoll Punkt 1 angewendet: Modul restlos bereinigt, SDB-Blöcke entfernt, Git-Index remote auf GitHub korrigiert und `.gitignore` finalisiert (30m). |
 [EndOfTable]
 
-**Total Technical Debt Cleared / Invested:** ~7.25 hrs.
+**Total Technical Debt Cleared / Invested:** ~8.17 hrs.

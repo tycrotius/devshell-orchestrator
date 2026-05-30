@@ -2,20 +2,14 @@
 
 ## 🚀 In Flight / Next Up
 
-### [FEATURE] Native Project-Initializer (Defensive Bootstrapper)
-* **Description:** A global command (`New-ProjectWorkspace`) that generates a standardized project structure, initializes a Git repository, checks for required CLI tools (like `gh`), installs them via Chocolatey if missing, and establishes the remote VCS tracking completely headless.
-* **Architecture Pattern (Proven):**
-  1. **Pre-Flight Check:** Scan system for required binaries (`Get-Command`).
-  2. **Automated Remediation:** Inline deployment via `choco install` if missing.
-  3. **Session Hydration:** Dynamic environment block refresh without shell restart.
-  4. **Interactive Authentication Handling:** Guard rails for CLI logins (e.g., `gh auth status/login`).
-  5. **VCS Wiring:** Automated `git init`, `.gitignore` provisioning, remote creation, and upstream mapping.
-* **New Specification (Named Hidden File Transition):**
-  * **Goal:** Move away from relying on `Run-Tests.ps1` as the root directory marker.
-  * **Implementation:** The initializer must generate a dedicated hidden file named `.devshell-project` directly in the root directory.
-  * **Execution:** Set the hidden attribute natively via PowerShell:
-    `(Get-Item -Path $markerPath -Force).Attributes = 'Hidden'`
-  * **Refactoring Target:** Update `Get-ProjectRootPath` in the core module to scan for this hidden tracker instead of the executable script.
+### [FEATURE] Template-Injektion für New-ProjectWorkspace (Sprint 3)
+* **Description:** Erweiterung des Initialisierungs-Befehls, um beim Erstellen eines neuen Workspaces automatisiert vordefinierte Strukturen (z. B. leere `tests/`-Ordner und standardisierte Test-Templates) zu kopieren.
+
+### [FEATURE] Pester-Injektion / Mocking-Framework (Sprint 3)
+* **Description:** Bereitstellung einer internen Hilfsfunktion im Orchestrator, um das Mocken des `$script:VcsExecutor` innerhalb der Testdateien zu vereinfachen, ohne dass mühsam über das Modul-Objekt (`& $modObj`) gearbeitet werden muss.
+
+### [TECH DEBT] Plattform-Check & Cross-Platform (Sprint 3)
+* **Description:** Validierung der gesamten Pfad- und Normalisierungslogik unter PowerShell Core (7.x), um Cross-Platform-Kompatibilität für Linux und macOS abzusichern.
 
 ---
 
@@ -34,6 +28,6 @@
 ---
 
 ## 🏁 Completed Milestones
+* **[2026-05-30] Workspace-Automatisierung & VCS-Wiring (Sprint 2):** Implementierung von `New-ProjectWorkspace` mit nativer Verbergung des `.devshell-project` Markers. Aufbau der Git-Idempotenz und Absicherung über die Testfälle `[07]` bis `[12]` unter Einhaltung des KDP-Protokolls.
 * **[2026-05-30] Dynamic Project-Root Configuration (Sprint 1):** Broke the hardcoded dependency on `Run-Tests.ps1`. Implemented a robust configuration checker in the module loader (`orchestrator.conf.json`) and dynamically wired `Get-ProjectRootPath` using a PS 5.1-safe evaluation array fallback. Covered by test cases `[05]` and `[06]`.
 * **[2026-05-30] Pester Interception & Data-Streaming:** Fixed the console interception barrier by switching Pester to object-driven configuration. Captured `$result` data cleanly into the Windows clipboard pipeline while preserving the absolute silent "Lean Mode" design.
-
