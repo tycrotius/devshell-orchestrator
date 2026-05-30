@@ -1,0 +1,42 @@
+--- tests/orchestrator.Tests.ps1
++++ tests/orchestrator.Tests.ps1
+@@ -170,39 +170,4 @@
+                 # [Cross-Ref -> Module: Process Step 5] VCS Wiring: Wurde Git mit 'init' gerufen?
+                 $calls = @(& $modObj { $script:GitCalls })
+-
+-		# Self-Debugging mit VAR_DUMP
+-                Write-Host "`n=== VAR_DUMP START ===" -ForegroundColor Yellow
+-                if ($null -eq $calls) {
+-                    Write-Host "Variable ist `$null" -ForegroundColor Red
+-                } else {
+-                    Write-Host "Basis-Datentyp:      $($calls.GetType().FullName)" -ForegroundColor Cyan
+-                    Write-Host "Ist echtes Array:    $($calls -is [array])" -ForegroundColor Cyan
+-                    Write-Host "Elementanzahl (.Count): $($calls.Count)" -ForegroundColor Cyan
+-                        
+-                    Write-Host "`n--- Struktur-Dump (JSON) ---" -ForegroundColor Gray
+-                    $calls | ConvertTo-Json -Depth 2 -ErrorAction SilentlyContinue | Write-Host -ForegroundColor Green
+-    
+-                    Write-Host "`n--- Index-Inspektion ---" -ForegroundColor Gray
+-                    if ($calls -is [string]) {
+-                        Write-Host "WARNUNG: `$calls ist ein reiner STRING! `$calls[0] liefert nur das Zeichen: '$($calls[0])'" -ForegroundColor DarkYellow
+-                    } else {
+-                        for ($i = 0; $i -lt $calls.Count; $i++) {
+-                            $item = $calls[$i]
+-                            if ($null -eq $item) {
+-                                Write-Host "  [$i] -> `$null" -ForegroundColor Red
+-                            } else {
+-                                Write-Host "  [$i] Typ: $($item.GetType().Name) | Wert: '$item'" -ForegroundColor Magenta
+-                            }
+-                        }
+-                    }
+-                }
+-                Write-Host "=== VAR_DUMP END ===`n" -ForegroundColor Yellow
+-                # End
+-
+-                # SDB Temp. DEBUGGING Insertion
+-                Write-Host "[DEBUG] Calls count: $($calls.Count)" -ForegroundColor Yellow
+-                foreach($c in $calls) { Write-Host "[DEBUG] Call: $c" -ForegroundColor Yellow }
+-                # ENDSDB
+-
+                 $calls.Count | Should -Be 1
+                 # Statt -Match "init" (was bei PS 5.1/Pester 5.x manchmal den Regex-Kontext verliert)

@@ -1,0 +1,10 @@
+﻿{
+    "Project": {
+        "MarkerFile": ".devshell-project",
+        "DefaultSourceDir": "src",
+        "DefaultTestDir": "tests"
+    },
+    "Validation": {
+        "EnablePathTraversalProtection": true
+    }
+}

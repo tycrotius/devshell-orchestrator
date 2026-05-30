@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE report PUBLIC "-//JACOCO//DTD Report 1.1//EN" "report.dtd"[]>
+<report name="Pester (05/30/2026 01:23:19)">
+  <sessioninfo id="this" start="1780104198461" dump="1780104199600" />
+  <package name="src">
+    <class name="src/devshell-orchestrator" sourcefilename="devshell-orchestrator.psm1">
+      <method name="Get-ProjectRootPath" desc="()" line="17">
+        <counter type="INSTRUCTION" missed="7" covered="0" />
+        <counter type="LINE" missed="7" covered="0" />
+        <counter type="METHOD" missed="1" covered="0" />
+      </method>
+      <method name="Get-ProjectFile" desc="()" line="41">
+        <counter type="INSTRUCTION" missed="13" covered="0" />
+        <counter type="LINE" missed="11" covered="0" />
+        <counter type="METHOD" missed="1" covered="0" />
+      </method>
+      <method name="Invoke-DevShellTests" desc="()" line="72">
+        <counter type="INSTRUCTION" missed="14" covered="0" />
+        <counter type="LINE" missed="12" covered="0" />
+        <counter type="METHOD" missed="1" covered="0" />
+      </method>
+      <method name="&lt;script&gt;" desc="()" line="94">
+        <counter type="INSTRUCTION" missed="0" covered="2" />
+        <counter type="LINE" missed="0" covered="2" />
+        <counter type="METHOD" missed="0" covered="1" />
+      </method>
+      <counter type="INSTRUCTION" missed="34" covered="2" />
+      <counter type="LINE" missed="30" covered="2" />
+      <counter type="METHOD" missed="3" covered="1" />
+      <counter type="CLASS" missed="1" covered="0" />
+    </class>
+    <sourcefile name="devshell-orchestrator.psm1">
+      <line nr="17" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="18" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="19" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="20" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="21" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="23" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="25" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="41" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="42" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="45" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="46" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="47" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="51" mi="2" ci="0" mb="0" cb="0" />
+      <line nr="53" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="54" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="55" mi="2" ci="0" mb="0" cb="0" />
+      <line nr="56" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="58" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="72" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="73" mi="2" ci="0" mb="0" cb="0" />
+      <line nr="75" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="77" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="78" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="80" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="81" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="82" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="85" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="87" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="88" mi="2" ci="0" mb="0" cb="0" />
+      <line nr="90" mi="1" ci="0" mb="0" cb="0" />
+      <line nr="94" mi="0" ci="1" mb="0" cb="0" />
+      <line nr="96" mi="0" ci="1" mb="0" cb="0" />
+      <counter type="INSTRUCTION" missed="34" covered="2" />
+      <counter type="LINE" missed="30" covered="2" />
+      <counter type="METHOD" missed="3" covered="1" />
+      <counter type="CLASS" missed="1" covered="0" />
+    </sourcefile>
+    <counter type="INSTRUCTION" missed="34" covered="2" />
+    <counter type="LINE" missed="30" covered="2" />
+    <counter type="METHOD" missed="3" covered="1" />
+    <counter type="CLASS" missed="1" covered="0" />
+  </package>
+  <counter type="INSTRUCTION" missed="34" covered="2" />
+  <counter type="LINE" missed="30" covered="2" />
+  <counter type="METHOD" missed="3" covered="1" />
+  <counter type="CLASS" missed="1" covered="0" />
+</report>
