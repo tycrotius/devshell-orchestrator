@@ -1,4 +1,10 @@
-﻿<#
+﻿# --- TDD Sprint 1: Configuration File Check ---
+$expectedConfigPath = Join-Path $PSScriptRoot "..\orchestrator.conf.json"
+if (-not (Test-Path $expectedConfigPath)) {
+    throw [System.IO.FileNotFoundException]::new("Kritische Konfigurationsdatei nicht gefunden: $expectedConfigPath")
+}
+# ----------------------------------------------
+<#
 .Synopsis
     Core module for the DevShell Orchestrator.
 #>
@@ -8,7 +14,7 @@ function Get-ProjectRootPath {
     param()
 
     $currentPath = Get-Location
-    $marker = "Run-Tests.ps1"
+    $marker = ($script:Config.Project.MarkerFile, "Run-Tests.ps1" -ne $null)[0]
     
     for ($i = 0; $i -lt 4; $i++) {
         # HIER SIND DIE CHECK-BREAKS: Abbruch bei Null, Leerstring oder Laufwerkswurzel
@@ -53,7 +59,7 @@ function Run-Tests {
     }
 
     if ($VerboseOutput) {
-        $runScript = Join-Path $projectRoot "Run-Tests.ps1"
+        $runScript = Join-Path $projectRoot ($script:Config.Project.MarkerFile, "Run-Tests.ps1" -ne $null)[0]
         if (Test-Path $runScript) {
             & $runScript
         } else {
@@ -113,6 +119,8 @@ function Get-ProjectFile {
 }
 
 Export-ModuleMember -Function Get-ProjectRootPath, Run-Tests, Get-ProjectFile
+
+
 
 
 
