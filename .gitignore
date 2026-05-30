@@ -1,8 +1,18 @@
-﻿.vscode/
-*.log
+﻿*.log
 *.tmp
 /tests/TestResults.xml
 
 *.patch
 vcs_sandbox.ps1
 coverage.xml
+
+# =====================================================================
+# VS CODE WORKSPACE ARCHITECTURE
+# =====================================================================
+# Blockiert den gesamten Ordner standardmaessig vor versehentlichem Tracking
+.vscode/*
+
+# Erlaubt explizit die gemeinsame Test- und Debug-Infrastruktur fuer das Team
+!.vscode/tasks.json
+!.vscode/launch.json
+

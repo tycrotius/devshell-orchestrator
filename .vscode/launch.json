@@ -1,0 +1,23 @@
+﻿{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "PowerShell",
+            "request": "launch",
+            "name": "PowerShell: Debug Active Pester Test File",
+            "script": "Invoke-Pester",
+            "args": [
+                "-Path",
+                "${file}"
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "PowerShell",
+            "request": "launch",
+            "name": "PowerShell: Interactive Script Debugging",
+            "script": "${file}",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
