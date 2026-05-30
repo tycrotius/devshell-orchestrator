@@ -26,3 +26,8 @@
 
 ### [TOOLING] Pester Test-Coverage Reporter for Lean Mode
 * Extend the `Run-Tests` orchestrator to optionally dump a lightweight coverage summary directly into the shell using ANSI colors, without violating the "Lean Mode" silence guidelines.
+
+---
+
+## 🏁 Completed Milestones
+* **[2026-05-30] Pester Interception & Data-Streaming:** Fixed the console interception barrier by switching Pester to object-driven configuration. Captured `$result` data cleanly into the Windows clipboard pipeline while preserving the absolute silent "Lean Mode" design.
