@@ -2,3 +2,7 @@
 *.log
 *.tmp
 /tests/TestResults.xml
+
+*.patch
+vcs_sandbox.ps1
+coverage.xml
